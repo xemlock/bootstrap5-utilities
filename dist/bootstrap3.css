@@ -943,6 +943,10 @@
   min-width: 0 !important;
 }
 
+.min-w-100 {
+  min-width: 100% !important;
+}
+
 @media (min-width: 480px) {
   .float-ms-start {
     float: left !important;
