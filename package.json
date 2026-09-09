@@ -1,0 +1,22 @@
+{
+  "name": "bootstrap5-utilities",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdir -p dist && dart-sass scss/bootstrap5.scss > dist/bootstrap5.css"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xemlock/bootstrap5-utilities.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xemlock/bootstrap5-utilities/issues"
+  },
+  "homepage": "https://github.com/xemlock/bootstrap5-utilities#readme",
+  "devDependencies": {
+    "bootstrap": "^5.3.8",
+    "dart-sass": "^1.25.0"
+  }
+}
