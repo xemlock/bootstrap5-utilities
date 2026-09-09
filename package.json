@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir -p dist && dart-sass scss/bootstrap5.scss > dist/bootstrap5.css"
+    "build": "mkdir -p dist && dart-sass scss/bootstrap3.scss > dist/bootstrap3.css && dart-sass scss/bootstrap5.scss > dist/bootstrap5.css"
   },
   "license": "MIT",
   "repository": {

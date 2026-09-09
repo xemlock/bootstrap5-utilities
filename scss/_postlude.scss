@@ -1,0 +1,25 @@
+@use "sass:map";
+@use "sass:list";
+
+@import "../node_modules/bootstrap/scss/utilities";
+
+// Add unofficial min-width utility, https://github.com/twbs/bootstrap/issues/30543
+// min-w-0 is the one users actually want 90% of the time — the escape hatch from
+// min-width: auto on flex items so text can truncate instead of blowing out the row.
+$utilities: map.merge($utilities, (
+  "min-width": (
+    property: min-width,
+    class: min-w,
+    values: (0: 0)
+  ),
+));
+
+$utilities-filtered: ();
+@each $key, $val in $utilities {
+  @if list.index($utilities-whitelist, $key) {
+    $utilities-filtered: map.merge($utilities-filtered, ($key: $val));
+  }
+}
+$utilities: $utilities-filtered;
+
+@import "../node_modules/bootstrap/scss/utilities/api";  // emits only the subset

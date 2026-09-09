@@ -1,0 +1,142 @@
+@import "./prelude";
+
+// Bootstrap 3 defines rem as 10px, so in order to get same sizes to those in
+// Bootstrap 4+, here spacer is defined as 16px (compared to 1rem in Bootstrap 4)
+$spacer: 16px;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+// Bootstrap 3 breakpoints
+// For Bootstrap 4 use the defaults.
+// @screen-xs: 480px looks like an xs breakpoint, but it isn't one for the grid,
+// no col-xs-* rule is wrapped in a min-width: 480px query, and @screen-xs-max
+// is computed as @screen-sm-min - 1 = 767px
+$grid-breakpoints: (
+  xs: 0,
+  ms: 480px, // mid-small breakpoint, unofficial community extension published via multiple GitHub gists
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1400px,
+);
+
+// Bootstrap 3 comes with the following utilities
+// https://github.com/twbs/bootstrap/blob/v3.4.1/less/utilities.less
+// - clearfix
+// - center-block
+// - pull-right
+// - pull-left
+// - hide
+// - show
+// - invisible
+// - text-hide
+// - hidden
+// - affix
+// Text utilities are missing !important
+// https://github.com/twbs/bootstrap/blob/v3.4.1/less/type.less#L91
+// - text-left
+// - text-right
+// - text-center
+// - text-justify
+// - text-nowrap
+// - text-lowercase
+// - text-uppercase
+// - text-capitalize
+
+$utilities-whitelist: (
+  // Vertical align - https://getbootstrap.com/docs/5.3/utilities/vertical-align
+  "align",
+  // Float - https://getbootstrap.com/docs/5.3/utilities/float
+  "float",
+  // Object Fit - https://getbootstrap.com/docs/5.3/utilities/object-fit
+  "object-fit",
+  // Opacity - https://getbootstrap.com/docs/5.3/utilities/opacity
+  "opacity",
+  // Overflow - https://getbootstrap.com/docs/5.3/utilities/overflow
+  "overflow",
+  "overflow-x",
+  "overflow-y",
+  // Display - https://getbootstrap.com/docs/5.3/utilities/display
+  "display",
+  // Position - https://getbootstrap.com/docs/5.3/utilities/position
+  "position",
+  "top",
+  "bottom",
+  "start",
+  "end",
+  "translate-middle",
+  // Sizing - https://getbootstrap.com/docs/5.3/utilities/sizing
+  "width",
+  "max-width",
+  "viewport-width",
+  "min-viewport-width",
+  "height",
+  "max-height",
+  "viewport-height",
+  "min-viewport-height",
+  // Flex - https://getbootstrap.com/docs/5.3/utilities/flex
+  "flex",
+  "flex-direction",
+  "flex-grow",
+  "flex-shrink",
+  "flex-wrap",
+  "justify-content",
+  "align-items",
+  "align-content",
+  "align-self",
+  "order",
+  // Spacing - https://getbootstrap.com/docs/5.3/utilities/spacing
+  // Margin utilities
+  "margin",
+  "margin-x",
+  "margin-y",
+  "margin-top",
+  "margin-bottom",
+  "margin-left",
+  "margin-right",
+  "negative-margin",
+  "negative-margin-x",
+  "negative-margin-y",
+  "negative-margin-top",
+  "negative-margin-bottom",
+  "negative-margin-left",
+  "negative-margin-right",
+  // Padding utilities
+  "padding",
+  "padding-x",
+  "padding-y",
+  "padding-top",
+  "padding-bottom",
+  "padding-left",
+  "padding-right",
+  // Gap utility
+  "gap",
+  "row-gap",
+  "column-gap",
+  // Text - https://getbootstrap.com/docs/5.3/utilities/text
+  "text-align",
+  "text-decoration",
+  "text-transform",
+  "white-space",
+  "word-wrap",
+  // Interactions - https://getbootstrap.com/docs/5.3/utilities/interactions
+  "user-select",
+  "pointer-events",
+  // Visibility - https://getbootstrap.com/docs/5.3/utilities/visibility
+  // Bootstrap 3 defined .invisible, but because of no !important modifier,
+  // it lacks consistency with other visibility classes. Adding it here fixes this.
+  // Bootstrap 4 acknowledged this and made all utilities uniformly important.
+  "visibility",
+  // Z-index - https://getbootstrap.com/docs/5.3/utilities/z-index
+  "z-index",
+  // Extras
+  "min-width",
+);
+
+@import "./postlude";

@@ -1,3 +1,7 @@
-.min-w-0 {
-  min-width: 0 !important;
-}
+@import "./prelude";
+
+$utilities-whitelist: (
+  "min-width",
+);
+
+@import "./postlude";
